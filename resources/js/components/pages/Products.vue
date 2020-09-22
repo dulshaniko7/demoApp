@@ -1,13 +1,10 @@
 <template>
-    <div class="container">
-        <h2>Demo App
-        </h2>
-    </div>
+    
 </template>
 
 <script>
     export default {
-        name: "Index"
+        name: "Products"
     }
 </script>
 

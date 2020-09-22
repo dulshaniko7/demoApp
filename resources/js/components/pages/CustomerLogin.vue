@@ -1,6 +1,6 @@
 <template>
     <div>
-        Login
+        Customer Login
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <div class="card shadow-sm my-5">
@@ -9,9 +9,9 @@
                             <div class="col-lg-12">
                                 <div class="login-form">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Customer Login</h1>
                                     </div>
-                                    <form class="user" @submit.prevent="login">
+                                    <form  @submit.prevent="login">
                                         <div class="form-group">
                                             <input type="email" class="form-control" id="exampleInputEmail"
                                                    aria-describedby="emailHelp"
@@ -41,7 +41,7 @@
                                     <hr>
 
                                     <div class="text-center">
-
+                                        <router-link :to="{name : 'customerRegister'}">Create an Account!</router-link>
                                     </div>
                                     <div class="text-center">
 
@@ -60,7 +60,7 @@
 
 <script>
     export default {
-        name: "Login",
+        name: "CustomerLogin",
         data() {
             return {
                 form: {
@@ -71,18 +71,13 @@
             }
         },
         methods: {
-            login(){
-                axios.post('/api/auth/login',this.form)
+            login() {
+                axios.post('/api/customerLogin', this.form)
                     .then(response => {
-                        User.responseAfterLogin(response)
+                        // User.responseAfterLogin(response)
 
-                this.$router.push({ name: 'dashboard'})
-            })
-            }
-        },
-        mounted() {
-            if(User.loggedIn()){
-                this.$router.push({ name: 'dashboard'})
+                        this.$router.push({name: 'customerIndex'})
+                    })
             }
         }
 

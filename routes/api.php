@@ -31,3 +31,9 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('register', 'AuthController@register');
 });
+
+
+Route::apiResource('product','Api\ProductController');
+
+Route::post('customerLogin', 'Api\CustomerController@login');
+Route::post('customerRegister', 'Api\CustomerController@register');

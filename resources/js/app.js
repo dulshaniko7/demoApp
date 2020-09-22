@@ -14,6 +14,8 @@ import router from "./router"
 import User from './helpers/User'
 window.User = User
 
+import Notification from './helpers/Notification'
+window.Notification = Notification
 
 const app = new Vue({
     el: '#app',

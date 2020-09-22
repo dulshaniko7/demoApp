@@ -1,13 +1,12 @@
 <template>
-    <div class="container">
-        <h2>Demo App
-        </h2>
+    <div>
+Edit a Product
     </div>
 </template>
 
 <script>
     export default {
-        name: "Index"
+        name: "ShowProduct"
     }
 </script>
 
